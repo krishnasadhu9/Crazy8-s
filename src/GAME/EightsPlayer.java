@@ -34,14 +34,15 @@ public class EightsPlayer extends Player {
 	  public Card searchForMatch(EightsCard prev) {
 		  
 		  System.out.println("Turn for player : " + getName() + " Tell the Index of the card to be discarded");
-		  System.out.println("PRESS 0 To pic a card from Draw Pile");
+		  System.out.println("PRESS 10 To pic a card from Draw Pile");
 		  Scanner in = new Scanner(System.in);
 		  int i = in.nextInt();
-		  if(i == 0)
+		  if(i == 10 )
 		  { return null;}
 		  else
 		  {
-	      Card card = eightsHand.getCard(i-1);
+		   i= i-1;
+	      Card card = eightsHand.getCard(i);
 	      EightsCard duplicate = new EightsCard(0,0);
 	      duplicate = duplicate.convert(card);
 	      if (duplicate.cardMatches(prev)) {
